@@ -1,0 +1,20 @@
+.main {
+  min-height: 100vh;
+}
+
+.picture {
+  padding-block: 8rem;
+  background-color: #ef4444;
+}
+
+@media (min-width: 1024px){
+  .picture {
+    padding-block: 12rem;
+  }
+}
+
+.prose {
+  max-width: 768px;
+  margin-inline: auto;
+  padding-block: 4rem;
+}

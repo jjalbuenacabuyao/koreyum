@@ -1,0 +1,72 @@
+.font-primary {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-secondary {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.text-red-600 {
+  color: #dc2626;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+}
+
+.bg-red-600 {
+  background-color: #dc2626;
+}
+
+.carousel-img {
+  height: 250px;
+}
+
+.menu-title {
+  font-size: 2rem;
+}
+
+.menu-subtitle {
+  font-size: 1.25rem;
+}
+
+.addons-container img {
+  height: 200px;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .set-container {
+    display: grid!important;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .set-container img {
+    object-fit: cover;
+    height: 300px;
+  }
+
+  .addons-container {
+    display: grid!important;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel-img {
+    height: 400px;
+  }
+
+  .addons-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .addons-container img {
+    object-fit: cover;
+    height: 145px;
+  }
+}
