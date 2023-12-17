@@ -6,7 +6,7 @@ $uname = "root";
 
 $password = "";
 
-$db_name = "koreyumexp";
+$db_name = "koreyum";
 
 $conn = mysqli_connect($sname, $uname, $password, $db_name);
 
