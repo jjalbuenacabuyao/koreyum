@@ -9,8 +9,8 @@ echo '<div class="modal" tabindex="-1" id="sign-in">
     <div class="modal-body">
       <form action="php/login.php" method="post">
         <div>
-          <label for="cusId" class="form-label"></label>
-          <input name="customerId" type="text" class="form-control" id="cusId" placeholder="Username">
+          <label for="email" class="form-label"></label>
+          <input name="email" type="email" class="form-control" id="email" placeholder="Email">
         </div>
         <div class="input-box">
           <label for="password" class="form-label"></label>
