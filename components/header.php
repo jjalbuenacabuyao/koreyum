@@ -29,9 +29,9 @@ session_start();
           if (!isset($_SESSION['id'])) {
             echo '
             <li class="nav-item" style="padding-right: 0.5rem;">
-              <button class="btn bg-red-600 text-white fw-bold rounded-pill" style="--bs-btn-hover-bg: #991b1b;" data-bs-toggle="modal" data-bs-target="#sign-in">
-                Sign in
-              </button>
+              <a class="btn bg-red-600 text-white fw-bold rounded-pill" style="--bs-btn-hover-bg: #991b1b;" href="./pages/login.php">
+                Log in
+              </a>
             </li>
             
             <li class="nav-item">
