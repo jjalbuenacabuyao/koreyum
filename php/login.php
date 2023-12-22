@@ -7,7 +7,7 @@ $emailInput = $_POST['email'];
 $passwordInput = $_POST['password'];
 
 if (!(isset($emailInput) && isset($passwordInput))) {
-    header("Location: ../homepage.php");
+    header("Location: ../pages/login.php");
     exit();
 }
 
@@ -23,28 +23,31 @@ $email = validate($_POST['email']);
 $password = validate($_POST['password']);
 
 if (empty($email)) {
-    header("Location: ../homepage.php?error=customerId is required");
+    header("Location: ../pages/login.php?error=email is required");
     exit();
 }
 
 if (empty($password)) {
-    header("Location: ../homepage.php?error=password is required");
+    header("Location: ../pages/login.php?error=password is required");
     exit();
 }
 
+
+$sql = "SELECT * FROM user WHERE email='$email'";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) !== 1) {
+    header("Location: ../pages/login.php?error=User does not exist");
+    exit();
+}
 
 $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) !== 1) {
-    header("Location: ../homepage.php?error=Incorect customerId or password");
-    exit();
-}
-
 $row = mysqli_fetch_assoc($result);
 
-if (!($row['email'] === $email && $row['password'] === $password)) {
-    header("Location: ../homepage.php?error=Incorect customerId or password");
+if (!($row['password'] === $password)) {
+    header("Location: ../pages/login.php?error=Incorect password");
     exit();
 }
 
