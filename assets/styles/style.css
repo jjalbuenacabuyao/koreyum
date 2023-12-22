@@ -1,25 +1,9 @@
-.font-primary {
-  font-family: 'Inter', sans-serif;
-}
-
-.font-secondary {
-  font-family: "Josefin Sans", sans-serif;
-}
-
-.text-red-600 {
-  color: #dc2626;
-}
-
 .p-0 {
   padding: 0;
 }
 
 .hero-title {
   font-size: 3rem;
-}
-
-.bg-red-600 {
-  background-color: #dc2626;
 }
 
 .carousel-img {
