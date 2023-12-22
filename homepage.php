@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/styles/bootstrap.min.css" />
   <link rel="stylesheet" href="./assets/styles/style.css" />
+  <link rel="stylesheet" href="./assets/styles/utility.css">
   <script src="./assets/js/bootstrap.min.js" defer></script>
   <title>KoreYum</title>
 </head>
