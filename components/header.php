@@ -20,24 +20,24 @@ session_start();
           <li class="nav-item">
             <a class="nav-link text-dark" href="#menu">Menu</a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link text-dark" href="./pages/about.php">About</a>
           </li>
-          
+
           <?php
           if (!isset($_SESSION['id'])) {
             echo '
             <li class="nav-item" style="padding-right: 0.5rem;">
-              <a class="btn bg-red-600 text-white fw-bold rounded-pill" style="--bs-btn-hover-bg: #991b1b;" href="./pages/login.php">
+              <a class="btn bg-red-600 text-white fw-bold rounded-pill px-3" style="--bs-btn-hover-bg: #991b1b;" href="./pages/login.php">
                 Log in
               </a>
             </li>
             
             <li class="nav-item">
-              <button class="btn btn-outline-dark rounded-pill" data-bs-target="#register" data-bs-toggle="modal">
+              <a class="btn btn-outline-dark rounded-pill px-3" href="./pages/register.php">
                 Register
-              </button>
+              </a>
             </li>
             ';
           } else {
@@ -50,7 +50,7 @@ session_start();
 
             echo '
             <li class="nav-item">
-              <a href="./php/logout.php" class="btn btn-danger">Log out</a>
+              <a href="./php/logout.php" class="btn btn-danger rounded-pill px-3">Log out</a>
             </li>';
           }
           ?>
