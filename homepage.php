@@ -25,8 +25,7 @@
           <h1 class="text-red-600 font-secondary fw-bold hero-title">KoreYum Grill and Restaurant</h1>
           <p class="fs-5 mb-4">Unlimited eat all you can!</p>
           <div class="d-flex align-items-md-center gap-3 flex-column flex-md-row">
-            <button class="btn bg-red-600 text-white fw-bold" style="--bs-btn-hover-bg: #991b1b;" data-bs-toggle="modal" data-bs-target="#sign-in">Sign in</button>
-            <button class="btn btn-outline-dark" data-bs-target="#register" data-bs-toggle="modal">Register</button>
+            <button class="btn bg-red-600 text-white fw-bold px-4 py-2" style="--bs-btn-hover-bg: #991b1b;">Order Now</button>
           </div>
         </div>
         <div class="col max-h-75">
@@ -118,12 +117,6 @@
       <p class="text-center">&copy; 2023 KoreYum. All rights reserved.</p>
     </footer>
   </main>
-
-  <!-- Sign in modal -->
-  <?php include "./components/signInModal.php" ?>
-
-  <!-- Register modal -->
-  <?php include "./components/registerModal.php" ?>
 </body>
 
 </html>
