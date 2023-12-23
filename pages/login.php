@@ -20,11 +20,6 @@ if (isset($url_components['query'])) {
   <link rel="stylesheet" href="../assets/styles/utility.css">
   <script src="../assets/js/bootstrap.min.js" defer></script>
   <title>Login | KoreYum</title>
-  <style>
-    #login-btn:hover {
-      opacity: 90%!important;
-    }
-  </style>
 </head>
 
 <body>
