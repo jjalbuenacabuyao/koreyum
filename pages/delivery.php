@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!isset($_SESSION['customerId'])) {
+if (!isset($_SESSION['id'])) {
   header("Location: ../homepage.php");
 }
 
