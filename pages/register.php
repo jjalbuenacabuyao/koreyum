@@ -43,9 +43,10 @@ include "../php/getUrlParams.php";
           echo '<p class="text-danger">Email already exist</p>';
         } ?>
       </div>
-      <div class="mb-3">
+      <div class="mb-3 position-relative">
         <label for="password" class="form-label">Password</label>
         <input name="password" type="password" class="form-control p-3" id="password" aria-describedby="emailHelp" required />
+        <i id="eye-icon" class="bi bi-eye-slash" style="font-size: 1.75rem; position:absolute; top:2.2rem; right:1.5rem;"></i>
       </div>
       <div class="d-flex justify-content-end">
         <input type="submit" name="submit" class="btn bg-red-600 text-white rounded-full px-3" style="--bs-btn-hover-bg: #991b1b;" />
@@ -53,5 +54,20 @@ include "../php/getUrlParams.php";
     </form>
   </main>
 </body>
+
+<script>
+  let eyeIcon = document.getElementById("eye-icon");
+  let password = document.getElementById("password");
+
+  eyeIcon.addEventListener("click", () => {
+    if (password.type === "password") {
+      password.type = "text";
+      eyeIcon.classList.replace("bi-eye-slash", "bi-eye-fill")
+    } else {
+      password.type = "password";
+      eyeIcon.classList.replace("bi-eye-fill", "bi-eye-slash")
+    }
+  })
+</script>
 
 </html>
