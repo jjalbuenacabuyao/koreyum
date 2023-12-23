@@ -1,9 +1,5 @@
 <?php
-$url = "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-$url_components = parse_url($url);
-if (isset($url_components['query'])) {
-  parse_str($url_components['query'], $params);
-}
+include "../php/getUrlParams.php";
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +19,7 @@ if (isset($url_components['query'])) {
 </head>
 
 <body>
-  <div class="container font-primary" style="max-width: 600px;margin-top:4rem;">
+  <main class="container font-primary" style="max-width: 600px;margin-top:4rem;">
     <div class="d-flex justify-content-center">
       <img src="../assets/images/logo.png" class="w-25" alt="">
     </div>
@@ -52,7 +48,7 @@ if (isset($url_components['query'])) {
         <button id="submit-btn" class="btn bg-red-600 text-white rounded-full px-3" style="--bs-btn-hover-bg: #991b1b;" type="submit">Log in</button>
       </div>
     </form>
-  </div>
+  </main>
 </body>
 
 <script>
