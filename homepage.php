@@ -20,7 +20,7 @@
 
   <main class="d-flex flex-column gap-5">
     <div class="container min-vh-100">
-      <div class="row flex-column flex-md-row pt-5 gap-5 align-items-center">
+      <div class="row flex-column flex-md-row gap-5 align-items-center" style="padding-top: 5.25rem;">
         <div class="col col-md-5 pt-5 pt-md-0">
           <h1 class="text-red-600 font-secondary fw-bold hero-title">KoreYum Grill and Restaurant</h1>
           <p class="fs-5 mb-4">Unlimited eat all you can!</p>
@@ -48,10 +48,23 @@
 
           foreach ($sets as $set => $setImg) {
             if (str_contains($set, "Set 1")) {
-              renderCard(true, $setImg, $set, 499);
+              renderCard($setImg, $set, 499, "set");
               continue;
             }
-            renderCard(true, $setImg, $set, 999);
+            renderCard($setImg, $set, 999, "set");
+          }
+          ?>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3 class="fw-bold menu-subtitle">Reservations</h3>
+        <div class="d-flex flex-column gap-4 addons-container">
+          <?php
+          $menus = array("Unli-Pork Samgyup" => "./assets/images/unli-pork-samgyup.jpg", "Unli-Beef Samgyup" => "./assets/images/unli-beef-samgyup.jpg", "Unli-Pork and Beef Samgyup" => "./assets/images/unli-pork-and-beef-samgyup.jpg", "Unli Shabu-Shabu" => "./assets/images/unli-shabu-shabu.jpg", "KoreYum Ultimate" => "./assets/images/koreyum-ultimate.jpg");
+
+          foreach ($menus as $menu => $img) {
+            renderCard($img, $menu, 249, "reservation");
           }
           ?>
         </div>
@@ -66,10 +79,10 @@
 
           foreach ($addOns as $addOn) {
             if (str_contains($addOn, "Pork")) {
-              renderCard(false, "./assets/images/unli-pork-samgyup.jpg", $addOn, 120);
+              renderCard("./assets/images/unli-pork-samgyup.jpg", $addOn, 120, "addons");
               continue;
             }
-            renderCard(false, "./assets/images/unli-beef-samgyup.jpg", $addOn, 150);
+            renderCard("./assets/images/unli-beef-samgyup.jpg", $addOn, 150, "addons");
           }
           ?>
         </div>
@@ -86,7 +99,7 @@
 
           $index = 0;
           foreach ($sides as $side => $price) {
-            renderCard(false, $sidesImages[$index], $side, $price);
+            renderCard($sidesImages[$index], $side, $price, "sides");
             $index++;
           }
           ?>
@@ -103,7 +116,7 @@
 
           $index = 0;
           foreach ($drinks as $side => $price) {
-            renderCard(false, $drinksImages[$index], $side, $price);
+            renderCard($drinksImages[$index], $side, $price, "drinks");
             $index++;
           }
           ?>
