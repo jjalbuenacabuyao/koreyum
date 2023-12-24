@@ -59,7 +59,7 @@
 
       <div class="row">
         <h3 class="fw-bold menu-subtitle">Reservations</h3>
-        <div class="d-flex flex-column gap-4 addons-container">
+        <div class="d-flex flex-column gap-4 addons-container" style="grid-template-columns: repeat(3, 1fr)!important;">
           <?php
           $menus = array("Unli-Pork Samgyup" => "./assets/images/unli-pork-samgyup.jpg", "Unli-Beef Samgyup" => "./assets/images/unli-beef-samgyup.jpg", "Unli-Pork and Beef Samgyup" => "./assets/images/unli-pork-and-beef-samgyup.jpg", "Unli Shabu-Shabu" => "./assets/images/unli-shabu-shabu.jpg", "KoreYum Ultimate" => "./assets/images/koreyum-ultimate.jpg");
 
