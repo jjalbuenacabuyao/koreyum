@@ -26,6 +26,7 @@
           <p class="fs-5 mb-4">Unlimited eat all you can!</p>
           <div class="d-flex align-items-md-center gap-3 flex-column flex-md-row">
             <button class="btn bg-red-600 text-white fw-bold px-4 py-2" style="--bs-btn-hover-bg: #991b1b;">Order Now</button>
+            <button class="btn btn-outline fw-bold px-4 py-2" style="--bs-btn-hover-bg: #991b1b;">Reserve a Table</button>
           </div>
         </div>
         <div class="col max-h-75">
