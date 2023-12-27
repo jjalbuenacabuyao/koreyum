@@ -23,7 +23,7 @@ if (!isset($_SESSION["id"])) {
   <title>KoreYum</title>
 </head>
 
-<body>
+<body data-menuBody>
   <header class="container">
     <nav class="navbar navbar-expand-lg bg-white nav">
       <div class="container-fluid p-0">
@@ -174,8 +174,24 @@ if (!isset($_SESSION["id"])) {
     </div>
   </main>
 
-  <dialog id="orderDialog">
-    Order Dialog
+  <dialog id="orderDialog" data-isOpen="false">
+    <form action="">
+      <div>
+        <h1>KoreYum Sets</h1>
+        <div data-setContainer></div>
+      </div>
+
+      <div>
+        <h1>Add-ons</h1>
+        <div data-addonsContainer></div>
+      </div>
+
+      <div>
+        <h1>Sides</h1>
+        <div data-sidesContainer></div>
+      </div>
+    </form>
+
     <button data-trigger="closeOrder">Close</button>
   </dialog>
 
@@ -185,6 +201,8 @@ if (!isset($_SESSION["id"])) {
   </dialog>
 </body>
 
-<script src="../assets/js/toggleDialog.js"></script>
+<script src="../assets/js/toggleDialog.js" type="module"></script>
+<script src="../assets/js/renderSetsRadioButtonElements.js"></script>
+<script src="../assets/js/renderCheckboxes.js" type="module"></script>
 
 </html>
