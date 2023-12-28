@@ -1,212 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/styles/style.css" />
-    <script src="./assets/js/bootstrap.min.js" defer></script>
-    <title>KoreYum</title>
-  </head>
-  <body>
-    <header class="fixed-top">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img
-              src="./assets/images/logo.png"
-              width="128"
-              height="auto"
-              alt="KoreYum"
-            />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse flex-grow-0"
-            id="navbarNavAltMarkup"
-          >
-            <div class="navbar-nav">
-              <a class="nav-link active text-dark" aria-current="page" href="#">Home</a>
-              <a class="nav-link text-dark" href="./pages/about.php">About Us</a>
-            </div>
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./assets/styles/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/styles/style.css" />
+  <link rel="stylesheet" href="./assets/styles/utility.css">
+  <script src="./assets/js/bootstrap.min.js" defer></script>
+  <title>KoreYum</title>
+</head>
+
+<body class="font-primary" data-body>
+  <?php include "./components/header.php" ?>
+
+  <main class="d-flex flex-column gap-5">
+    <div class="container min-vh-100">
+      <div class="row flex-column flex-md-row gap-5 align-items-center" style="padding-top: 5.25rem;">
+        <div class="col col-md-5 pt-5 pt-md-0">
+          <h1 class="text-red-600 font-secondary fw-bold hero-title">KoreYum Grill and Restaurant</h1>
+          <p class="fs-5 mb-4">Unlimited eat all you can!</p>
+          <div class="d-flex align-items-md-center gap-3 flex-column flex-md-row">
+            <button class="btn bg-red-600 text-white fw-bold px-4 py-2" style="--bs-btn-hover-bg: #991b1b;">Order Now</button>
+            <button class="btn btn-outline-secondary fw-bold px-4 py-2 text-black" style="--bs-btn-hover-bg: rgba(0, 0, 0, 15%);">Reserve a Table</button>
           </div>
         </div>
-      </nav>
+        <div class="col max-h-75">
+          <?php include './components/carousel.php' ?>
+        </div>
+      </div>
+    </div>
+    <!-- Menu -->
+    <div class="container d-flex flex-column gap-5" id="menu">
+      <div class="row">
+        <h2 class="fw-bold font-secondary menu-title text-center">Menu</h2>
+      </div>
+
+      <div class="row">
+        <h3 class="fw-bold menu-subtitle">KoreYum Sets</h3>
+        <div class="d-flex flex-column gap-4 set-container">
+          <?php
+          include "./components/card.php";
+          $sets = array("KoreYum Set 1 (2 to 3 persons)" => "./assets/images/unli-shabu-shabu.jpg", "KoreYum Set 2 (4 to 5 persons)" => "./assets/images/koreyum-ultimate.jpg");
+
+          foreach ($sets as $set => $setImg) {
+            if (str_contains($set, "Set 1")) {
+              renderCard($setImg, $set, 499, "set");
+              continue;
+            }
+            renderCard($setImg, $set, 999, "set");
+          }
+          ?>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3 class="fw-bold menu-subtitle">Reservations</h3>
+        <div class="d-flex flex-column gap-4 addons-container" style="grid-template-columns: repeat(3, 1fr)!important;">
+          <?php
+          $menus = array("Unli-Pork Samgyup" => "./assets/images/unli-pork-samgyup.jpg", "Unli-Beef Samgyup" => "./assets/images/unli-beef-samgyup.jpg", "Unli-Pork and Beef Samgyup" => "./assets/images/unli-pork-and-beef-samgyup.jpg", "Unli Shabu-Shabu" => "./assets/images/unli-shabu-shabu.jpg", "KoreYum Ultimate" => "./assets/images/koreyum-ultimate.jpg");
+
+          foreach ($menus as $menu => $img) {
+            renderCard($img, $menu, 249, "reservation");
+          }
+          ?>
+        </div>
+      </div>
+
+      <!-- Add-Ons -->
+      <div class="row">
+        <h3 class="fw-bold menu-subtitle">Add-ons</h3>
+        <div class="d-flex flex-column gap-4 addons-container">
+          <?php
+          $addOns = array("Pork (Plain)", "Pork (Bulgogi)", "Pork (Spicy)", "Beef (Plain)", "Beef (Bulgogi)", "Beef (Spicy)");
+
+          foreach ($addOns as $addOn) {
+            if (str_contains($addOn, "Pork")) {
+              renderCard("./assets/images/unli-pork-samgyup.jpg", $addOn, 120, "addons");
+              continue;
+            }
+            renderCard("./assets/images/unli-beef-samgyup.jpg", $addOn, 150, "addons");
+          }
+          ?>
+        </div>
+      </div>
+
+      <!-- Sides -->
+      <div class="row">
+        <h3 class="fw-bold menu-subtitle">Sides</h3>
+        <div class="d-flex flex-column gap-4 addons-container">
+          <?php
+          $sides = array("Korean Braised Tofu" => 100, "Korean Kimchi" => 100, "Lettuce" => 100, "Cucumber" => 50, "Carrots" => 50, "Ssamjang (Sweet Sauce)" => 50, "Gochujang (Spicy Sause)" => 50, "Cheese Sauce" => 50, "Potato Marble" => 70, "Rice" => 20);
+
+          $sidesImages = array("./assets/images/braised-tofu.jpg", "./assets/images/kimchi.webp", "./assets/images/lettuce.jpg", "./assets/images/cucumber.jpg", "./assets/images/carrots.webp", "./assets/images/ssamjang.jpg", "./assets/images/gochujang.jpg", "./assets/images/carrots.webp", "./assets/images/potato-marble.png", "./assets/images/rice.jpg");
+
+          $index = 0;
+          foreach ($sides as $side => $price) {
+            renderCard($sidesImages[$index], $side, $price, "sides");
+            $index++;
+          }
+          ?>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3 class="fw-bold menu-subtitle">Drinks</h3>
+        <div class="d-flex flex-column gap-4 addons-container drinks-container">
+          <?php
+          $drinks = array("Coca-Cola" => 40, "Juice" => 40, "Sprite" => 40, "Royal" => 40, "Soju" => 120);
+
+          $drinksImages = array("./assets/images/coke.webp", "./assets/images/juice.jpg", "./assets/images/sprite.webp", "./assets/images/royal.webp", "./assets/images/soju.webp");
+
+          $index = 0;
+          foreach ($drinks as $side => $price) {
+            renderCard($drinksImages[$index], $side, $price, "drinks");
+            $index++;
+          }
+          ?>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container d-flex flex-column align-items-center">
+      <img src="./assets/images/logo.png" width="128" height="auto" alt="KoreYum" />
+      <p class="text-center">&copy; 2023 KoreYum. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <dialog id="orderDialog" data-isOpen="false">
+    <header class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="fs-4 mb-0">Select your order</h1>
+      <button data-trigger="closeOrder" style="all: unset;">
+        <i class="bi bi-x-circle fs-3"></i>
+      </button>
     </header>
-
-    <main class="min-vh-100 main">
-      <div class="d-flex justify-content-center align-items-center">
-        <div class="d-flex flex-column row-gap-3 text-center button-group">
-
-          <form action="php/login.php" method="post">
-            <div>
-            <label for="cusId" class="form-label">Enter Customer Id</label>
-              <input name="customerId" type="text" class="form-control" id="cusId">
-
-            <label for="password" class="form-label">Password</label>
-              <input name="password" type="password" class="form-control" id="password"><br>
-            </div>
-            <div>
-              <input type="submit" name="submit" class="btn btn-light">
-            </div>
-
-      
-          </form>
-          <button
-            class="btn btn-light"
-            data-bs-target="#register"
-            data-bs-toggle="modal"
-          >
-            Register
-          </button>
-        </div>
+    <form action="./php/setOrders.php" class="d-flex flex-column gap-4" method="post">
+      <div>
+        <h2 class="text-red-600 fw-bold">KoreYum Sets</h2>
+        <div data-setContainer></div>
       </div>
 
-      <div class="features container-fluid">
-        <div class="row justify-content-center">
-          <div class="col text-center">
-            <img class="rounded" src="./assets/images/samgyeopsal.png" alt="" />
-            <h1 class="text-white fs-4">Unlimited Samgyeopsal</h1>
-          </div>
-
-          <div class="col text-center">
-            <img class="rounded" src="./assets/images/soju.png" alt="" />
-            <h1 class="text-white fs-4">Korean Soju</h1>
-          </div>
-
-          <div class="col text-center">
-            <img class="rounded" src="./assets/images/milktea.png" alt="" />
-            <h1 class="text-white fs-4">Unlimited Milktea</h1>
-          </div>
-        </div>
+      <div>
+        <h2 class="text-red-600 fw-bold">Add-ons</h2>
+        <div data-addonsContainer></div>
       </div>
-    </main>
 
-    <div class="modal" tabindex="-1" id="sign-in">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Signin</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
+      <div>
+        <h2 class="text-red-600 fw-bold">Sides</h2>
+        <div data-sidesContainer></div>
       </div>
-    </div>
 
-
-    <div class="modal" tabindex="-1" id="register">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Register</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form action="php/userInsert.php" method="post">
-
-              <div class="mb-3">
-                <label for="cusId" class="form-label">CustomerId</label>
-                <input
-                  name="customerId"
-                  type="text"
-                  class="form-control"
-                  id="cusId"
-                  aria-describedby="emailHelp"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">New Password</label>
-                <input
-                  name="password"
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  aria-describedby="emailHelp"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="fullName" class="form-label">Full Name</label>
-                <input
-                  name="fullName"
-                  type="text"
-                  class="form-control"
-                  id="fullName"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="address" class="form-label">Address</label>
-                <input
-                  name="address"
-                  type="text"
-                  class="form-control"
-                  id="address"
-                  aria-describedby="emailHelp"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="contactNo" class="form-label">Contact number</label>
-                <input
-                  name="contactNo"
-                  type="text"
-                  class="form-control"
-                  id="contactNo"
-                  aria-describedby="emailHelp"
-                  required
-                />
-              </div>              
-              <div class="mb-3">
-                <label for="Email" class="form-label">Email Address</label>
-                <input
-                  name="Email"
-                  type="text"
-                  class="form-control"
-                  id="Email"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-              <div>
-                <input type="submit" name="submit" class="btn btn-light">
-              </div>
-            </form>
-          </div>
-        </div>
+      <div>
+        <h2 class="text-red-600 fw-bold">Drinks</h2>
+        <div data-drinksContainer></div>
       </div>
-    </div>
-  </body>
+
+      <div class="d-flex justify-content-end gap-3 mt-2">
+        <button type="button" data-trigger="closeOrder" class="btn btn-outline-secondary">Cancel</button>
+        <button type="submit" class="btn bg-red-600 text-white fw-bold px-3">Submit</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="reservationDialog">
+    Reservation Dialog
+    <button data-trigger="closeReservation">Close</button>
+  </dialog>
+</body>
+
+<script src="./assets/js/toggleDialog.js" type="module"></script>
+<script src="./assets/js/renderSetsRadioButtonElements.js"></script>
+<script src="./assets/js/renderCheckboxes.js" type="module"></script>
+
 </html>
