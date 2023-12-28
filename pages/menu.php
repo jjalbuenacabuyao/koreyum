@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["id"])) {
-  header("Location: ../homepage.php");
+  header("Location: ../index.php");
 }
 ?>
 
@@ -66,7 +66,7 @@ if (!isset($_SESSION["id"])) {
             } else {
               echo '
               <li class="nav-item">
-                <a class="nav-link text-dark" href="./about.php">My Orders</a>
+                <a class="nav-link text-dark" href="./orders.php">My Orders</a>
               </li>
               ';
 
