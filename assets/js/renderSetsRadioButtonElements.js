@@ -17,7 +17,7 @@ sets.map(set => {
 
   const label = document.createElement("span");
   label.innerHTML = set;
-
+  
   const radioInput = document.createElement("input");
   for (const attribute in radioElementAttributes) {
     radioInput.setAttribute(attribute, radioElementAttributes[attribute]);
@@ -25,6 +25,8 @@ sets.map(set => {
 
   labelElement.appendChild(radioInput);
   labelElement.appendChild(label);
+
+  labelElement.classList += "d-flex align-items-center gap-2"
 
   innerWrapper.appendChild(labelElement);
 

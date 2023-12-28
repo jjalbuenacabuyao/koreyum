@@ -15,7 +15,7 @@ function renderCard($imageSrc, $title, $price, $type)
     if ($url === "http://localhost/koreyum/homepage.php" && (!isset($_SESSION["id"]))) {
       $btn = '<a href="./pages/login.php" class="btn btn-danger">' . $buttonText . '</a>';
     } else {
-      $btn = '<button data-trigger="order" class="btn btn-danger">' . $buttonText . '</button>';
+      $btn = '<button data-trigger="order" data-autoSelect="'.$title.'" class="btn btn-danger">' . $buttonText . '</button>';
     }
 
     echo '<div class="card shadow">
@@ -38,7 +38,7 @@ function renderCard($imageSrc, $title, $price, $type)
     if ($url === "http://localhost/koreyum/homepage.php" && (!isset($_SESSION["id"]))) {
       $btn = '<a href="./pages/login.php" class="btn btn-danger">' . $buttonText . '</a>';
     } else {
-      $btn = '<button data-trigger="reserve" class="btn btn-danger">' . $buttonText . '</button>';
+      $btn = '<button data-trigger="reserve" data-autoSelect='.$title.' class="btn btn-danger">' . $buttonText . '</button>';
     }
 
     if ($title === "Unli Shabu-Shabu") {

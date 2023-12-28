@@ -57,5 +57,5 @@ $_SESSION['fullname'] = $row['fullname'];
 $_SESSION['address'] = $row['address'];
 $_SESSION['email'] = $row['email'];
 $_SESSION['contactNumber'] = $row['contactNumber'];
-header("Location: ../homepage.php");
+header("Location: ../pages/menu.php");
 exit();

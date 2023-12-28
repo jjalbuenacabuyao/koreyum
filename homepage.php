@@ -111,7 +111,7 @@
         <h3 class="fw-bold menu-subtitle">Drinks</h3>
         <div class="d-flex flex-column gap-4 addons-container drinks-container">
           <?php
-          $drinks = array("Coca Cola" => 40, "Juice" => 40, "Sprite" => 40, "Royal" => 40, "Soju" => 120);
+          $drinks = array("Coca-Cola" => 40, "Juice" => 40, "Sprite" => 40, "Royal" => 40, "Soju" => 120);
 
           $drinksImages = array("./assets/images/coke.webp", "./assets/images/juice.jpg", "./assets/images/sprite.webp", "./assets/images/royal.webp", "./assets/images/soju.webp");
 

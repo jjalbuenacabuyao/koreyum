@@ -25,7 +25,7 @@
 
 @media screen and (min-width: 768px) {
   .set-container {
-    display: grid!important;
+    display: grid !important;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -35,7 +35,7 @@
   }
 
   .addons-container {
-    display: grid!important;
+    display: grid !important;
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -53,4 +53,29 @@
     object-fit: cover;
     height: 145px;
   }
+}
+
+#orderDialog::backdrop {
+  background-color: black;
+  opacity: 75%;
+}
+
+#orderDialog::-webkit-scrollbar {
+  display: none;
+}
+
+#orderDialog {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 80vw;
+  max-width: 512px;
+  margin-inline: auto;
+  border: 1px solid #242424;
+  border-radius: 2rem;
+  padding: 1.5rem;
+}
+
+.cb-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }

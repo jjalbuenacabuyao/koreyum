@@ -1,9 +1,11 @@
 export default function createCheckboxes(container, name, items) {
+  container.className += "cb-grid";
   items.map(item => {
     const innerContainer = document.createElement("div");
 
     const labelElement = document.createElement("label");
     labelElement.setAttribute("for", item);
+    labelElement.className += "d-flex align-items-center gap-2"
 
     const checkboxElementAttributes = {
       "id": item,
