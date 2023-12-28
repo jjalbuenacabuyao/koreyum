@@ -24,7 +24,7 @@ if (!isset($_SESSION["id"])) {
   <title>KoreYum</title>
 </head>
 
-<body data-menuBody>
+<body class="font-primary" data-body>
   <header class="container">
     <nav class="navbar navbar-expand-lg bg-white nav">
       <div class="container-fluid p-0">
@@ -204,7 +204,7 @@ if (!isset($_SESSION["id"])) {
       </div>
 
       <div class="d-flex justify-content-end gap-3 mt-2">
-        <button data-trigger="closeOrder" class="btn btn-outline-secondary">Cancel</button>
+        <button type="button" data-trigger="closeOrder" class="btn btn-outline-secondary">Cancel</button>
         <button type="submit" class="btn bg-red-600 text-white fw-bold px-3">Submit</button>
       </div>
     </form>
