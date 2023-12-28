@@ -41,16 +41,25 @@ session_start();
             </li>
             ';
           } else {
+            echo '
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="./pages/orders.php">My Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="./pages/reservations.php">My Reservations</a>
+              </li>
+              ';
+
             if ($_SESSION['id'] === "1") {
               echo '
               <li class="nav-item" style="padding-right: 0.5rem;">
-                <a class="nav-link text-dark" href="./pages/ViewInvoice.php">View Daily Sales</a>
+                <a class="nav-link text-dark" href="./pages/ViewInvoice.php">Daily Sales</a>
               </li>';
             }
 
             echo '
             <li class="nav-item">
-              <a href="./php/logout.php" class="btn btn-danger rounded-pill px-3">Log out</a>
+              <a href="./php/logout.php" class="btn btn-danger fw-bold rounded-pill px-3">Log out</a>
             </li>';
           }
           ?>
