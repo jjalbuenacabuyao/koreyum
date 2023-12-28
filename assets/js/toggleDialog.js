@@ -10,9 +10,13 @@ import {
 const body = document.querySelector("[data-menuBody]");
 
 openOrderDialogButton.forEach(button => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (event) => {
     orderDialog.showModal();
     body.style.overflowY = "hidden";
+
+    const targetSet = event.currentTarget.getAttribute("data-target");
+    const radioInputElement = document.querySelector(`input[value="${targetSet}"]`);
+    radioInputElement.setAttribute("checked", "true");
   })
 })
 
