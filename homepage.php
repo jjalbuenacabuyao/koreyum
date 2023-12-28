@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="./assets/styles/bootstrap.min.css" />
   <link rel="stylesheet" href="./assets/styles/style.css" />
   <link rel="stylesheet" href="./assets/styles/utility.css">
@@ -15,7 +16,7 @@
   <title>KoreYum</title>
 </head>
 
-<body class="font-primary">
+<body class="font-primary" data-body>
   <?php include "./components/header.php" ?>
 
   <main class="d-flex flex-column gap-5">
@@ -131,6 +132,50 @@
       <p class="text-center">&copy; 2023 KoreYum. All rights reserved.</p>
     </footer>
   </main>
+
+  <dialog id="orderDialog" data-isOpen="false">
+    <header class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="fs-4 mb-0">Select your order</h1>
+      <button data-trigger="closeOrder" style="all: unset;">
+        <i class="bi bi-x-circle fs-3"></i>
+      </button>
+    </header>
+    <form action="./php/setOrders.php" class="d-flex flex-column gap-4" method="post">
+      <div>
+        <h2 class="text-red-600 fw-bold">KoreYum Sets</h2>
+        <div data-setContainer></div>
+      </div>
+
+      <div>
+        <h2 class="text-red-600 fw-bold">Add-ons</h2>
+        <div data-addonsContainer></div>
+      </div>
+
+      <div>
+        <h2 class="text-red-600 fw-bold">Sides</h2>
+        <div data-sidesContainer></div>
+      </div>
+
+      <div>
+        <h2 class="text-red-600 fw-bold">Drinks</h2>
+        <div data-drinksContainer></div>
+      </div>
+
+      <div class="d-flex justify-content-end gap-3 mt-2">
+        <button type="button" data-trigger="closeOrder" class="btn btn-outline-secondary">Cancel</button>
+        <button type="submit" class="btn bg-red-600 text-white fw-bold px-3">Submit</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="reservationDialog">
+    Reservation Dialog
+    <button data-trigger="closeReservation">Close</button>
+  </dialog>
 </body>
+
+<script src="./assets/js/toggleDialog.js" type="module"></script>
+<script src="./assets/js/renderSetsRadioButtonElements.js"></script>
+<script src="./assets/js/renderCheckboxes.js" type="module"></script>
 
 </html>
