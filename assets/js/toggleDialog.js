@@ -7,7 +7,7 @@ import {
   closeReservationDialogButton
 } from "./index.js";
 
-const body = document.querySelector("[data-menuBody]");
+const body = document.querySelector("[data-body]");
 
 openOrderDialogButton.forEach(button => {
   button.addEventListener("click", (event) => {
