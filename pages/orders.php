@@ -38,9 +38,47 @@ if (!isset($userId)) {
     $orders = array();
 
     while($row = $result->fetch_assoc()) {
-      array_push($orders, array($row["koreyumSet"], $row["addons"], $row["sides"], $row["drinks"], $row["price"]));
+      array_push($orders, array($row["id"], $row["koreyumSet"], $row["addons"], $row["sides"], $row["drinks"], $row["price"]));
     }
     ?>
+
+    <table class="table table-hover table-borderless">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Set</th>
+          <th scope="col">Add-Ons</th>
+          <th scope="col">Sides</th>
+          <th scope="col">Drinks</th>
+          <th scope="col">Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $count = 1;
+        foreach ($orders as $order) {
+          echo '
+          <tr>
+            <th scope="row">'.$count.'</th>
+            <td>'.$order[1].'</td>
+            <td>'.$order[2].'</td>
+            <td>'.$order[3].'</td>
+            <td>'.$order[4].'</td>
+            <td>₱'.$order[5].'.00</td>
+            <td>
+              <form action="../php/cancelOrder.php" method="post">
+                <input name="orderId" value="'.$order[0].'" hidden />
+                <button type="submit" class="btn btn-danger px-3 fw-bold">Cancel</button>
+              </form>
+            </td>
+          </tr>
+          ';
+          $count++;
+        }
+        ?>
+      </tbody>
+    </table>
   </main>
 </body>
 
