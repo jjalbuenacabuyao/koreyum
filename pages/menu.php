@@ -41,11 +41,11 @@ if (!isset($_SESSION["id"])) {
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-dark" href="../index.php#menu">Menu</a>
+              <a class="nav-link text-dark" href="#">Menu</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-dark" href="../pages/about.php">About</a>
+              <a class="nav-link text-dark" href="./about.php">About</a>
             </li>
 
             <?php
