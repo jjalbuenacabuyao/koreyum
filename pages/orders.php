@@ -25,7 +25,7 @@ if (!isset($userId)) {
   <title>KoreYum | Orders</title>
 </head>
 
-<body class="font-primary m-5">
+<body class="font-primary mb-5">
   <main class="container">
     <h1 class="fw-bold font-secondary mb-3 text-center">My Orders</h1>
     <?php
@@ -37,7 +37,7 @@ if (!isset($userId)) {
 
     $orders = array();
 
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
       array_push($orders, array($row["id"], $row["koreyumSet"], $row["addons"], $row["sides"], $row["drinks"], $row["price"]));
     }
     ?>
@@ -45,37 +45,46 @@ if (!isset($userId)) {
     <table class="table table-hover table-borderless">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Set</th>
-          <th scope="col">Add-Ons</th>
-          <th scope="col">Sides</th>
-          <th scope="col">Drinks</th>
-          <th scope="col">Price</th>
-          <th scope="col">Action</th>
+          <th scope="col" class="text-red-600">#</th>
+          <th scope="col" class="text-red-600">Set</th>
+          <th scope="col" class="text-red-600">Add-Ons</th>
+          <th scope="col" class="text-red-600">Sides</th>
+          <th scope="col" class="text-red-600">Drinks</th>
+          <th scope="col" class="text-red-600">Price</th>
+          <th scope="col" class="text-red-600">Action</th>
         </tr>
       </thead>
       <tbody>
         <?php
-        $count = 1;
-        foreach ($orders as $order) {
+        if (count($orders) == 0) {
           echo '
           <tr>
-            <th scope="row">'.$count.'</th>
-            <td>'.$order[1].'</td>
-            <td>'.$order[2].'</td>
-            <td>'.$order[3].'</td>
-            <td>'.$order[4].'</td>
-            <td>₱'.$order[5].'.00</td>
+            <td colspan="7" class="text-center fw-bold py-4">No Orders</td>
+          </tr>
+          ';
+        } else {
+          $count = 1;
+          foreach ($orders as $order) {
+            echo '
+          <tr>
+            <th scope="row">' . $count . '</th>
+            <td>' . $order[1] . '</td>
+            <td>' . $order[2] . '</td>
+            <td>' . $order[3] . '</td>
+            <td>' . $order[4] . '</td>
+            <td>₱' . $order[5] . '.00</td>
             <td>
               <form action="../php/cancelOrder.php" method="post">
-                <input name="orderId" value="'.$order[0].'" hidden />
+                <input name="orderId" value="' . $order[0] . '" hidden />
                 <button type="submit" class="btn btn-danger px-3 fw-bold">Cancel</button>
               </form>
             </td>
           </tr>
           ';
-          $count++;
+            $count++;
+          }
         }
+
         ?>
       </tbody>
     </table>
