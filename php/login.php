@@ -51,7 +51,6 @@ if (!($row['password'] === $password)) {
     exit();
 }
 
-echo "Logged in!";
 $_SESSION['id'] = $row['id'];
 $_SESSION['fullname'] = $row['fullname'];
 $_SESSION['address'] = $row['address'];
