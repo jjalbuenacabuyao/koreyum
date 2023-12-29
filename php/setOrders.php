@@ -18,7 +18,7 @@ if ($set === "KoreYum Set 1 (2 to 3 persons)") {
 $selectedAddons = "";
 
 foreach ($addOns as $selectedAddon) {
-  $selectedAddons = $selectedAddon."&";
+  $selectedAddons = $selectedAddons.$selectedAddon."&";
 
   switch ($selectedAddon) {
     case "Pork (Plain)" || "Pork (Bulgogi)" || "Pork (Spicy)":
@@ -33,7 +33,7 @@ foreach ($addOns as $selectedAddon) {
 $selectedSides = "";
 
 foreach ($sides as $selectedSide) {
-  $selectedSides = $selectedSide."&";
+  $selectedSides = $selectedSides.$selectedSide."&";
 
   switch ($selectedSide) {
     case "Korean Braised Tofu" || "Korean Kimchi" || "Lettuce":
@@ -56,7 +56,7 @@ foreach ($sides as $selectedSide) {
 $selectedDrinks = "";
 
 foreach ($drinks as $selectedDrink) {
-  $selectedDrinks = $selectedDrink."&";
+  $selectedDrinks = $selectedDrinks.$selectedDrink."&";
 
   if ($selectedDrink === "Soju") {
     $totalPrice += 120;
@@ -67,8 +67,10 @@ foreach ($drinks as $selectedDrink) {
 
 $userId = $_SESSION["id"];
 
-$sql = "INSERT INTO customerorder (koreyumSet, addons, sides, drinks, userId, price) VALUES ('$set', '$selectedAddons', '$selectedSides', '$selectedDrinks', '$userId', '$totalPrice')";
+$sql = "INSERT INTO customerorder (koreyumSet, addons, sides, drinks, price, userId) VALUES ('$set', '$selectedAddons', '$selectedSides', '$selectedDrinks', '$totalPrice', '$userId')";
 
 $result = mysqli_query($conn, $sql);
+
+header("Location: ../pages/menu.php");
 
 $conn -> close();
