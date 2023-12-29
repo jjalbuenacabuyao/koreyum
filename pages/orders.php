@@ -27,7 +27,7 @@ if (!isset($userId)) {
 
 <body class="font-primary m-5">
   <main class="container">
-    <h1 class="fw-bold font-secondary mb-3">My Orders</h1>
+    <h1 class="fw-bold font-secondary mb-3 text-center">My Orders</h1>
     <?php
     include "../php/db.php";
 
