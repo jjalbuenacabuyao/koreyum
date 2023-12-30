@@ -50,39 +50,23 @@ if (!isset($userId)) {
             </li>
 
             <?php
-            if (!isset($_SESSION['id'])) {
-              echo '
-            <li class="nav-item" style="padding-right: 0.5rem;">
-              <a class="btn bg-red-600 text-white fw-bold rounded-pill px-3" style="--bs-btn-hover-bg: #991b1b;" href="./login.php">
-                Log in
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="btn btn-outline-dark rounded-pill px-3" href="./register.php">
-                Register
-              </a>
-            </li>
-            ';
-            } else {
-              echo '
+            echo '
               <li class="nav-item">
                 <a class="nav-link text-dark" href="#">My Orders</a>
               </li>
               ';
 
-              if ($_SESSION['id'] === "1") {
-                echo '
+            if ($_SESSION['id'] === "1") {
+              echo '
               <li class="nav-item" style="padding-right: 0.5rem;">
                 <a class="nav-link text-dark" href="./ViewInvoice.php">View Daily Sales</a>
               </li>';
-              }
+            }
 
-              echo '
+            echo '
               <li class="nav-item">
                 <a href="../php/logout.php" class="btn btn-danger rounded-pill px-3 fw-bold">Log out</a>
               </li>';
-            }
             ?>
           </ul>
         </div>
@@ -106,52 +90,52 @@ if (!isset($userId)) {
     }
     ?>
 
-    <table class="table table-hover table-borderless">
-      <thead>
-        <tr>
-          <th scope="col" class="text-red-600">#</th>
-          <th scope="col" class="text-red-600">Set</th>
-          <th scope="col" class="text-red-600">Add-Ons</th>
-          <th scope="col" class="text-red-600">Sides</th>
-          <th scope="col" class="text-red-600">Drinks</th>
-          <th scope="col" class="text-red-600">Price</th>
-          <th scope="col" class="text-red-600">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        if (count($orders) == 0) {
-          echo '
+    <div class="table-responsive-sm">
+      <table class="table-hover table-borderless table">
+        <thead>
           <tr>
-            <td colspan="7" class="text-center fw-bold py-4">No Orders</td>
+            <?php
+            $tableHeaders = array("#", "Set", "Add-Ons", "Sides", "Drinks", "Price", "Action");
+            foreach ($tableHeaders as $header) {
+              echo '<th scope="col" class="text-red-600">' . $header . '</th>';
+            }
+            ?>
           </tr>
-          ';
-        } else {
-          $count = 1;
-          foreach ($orders as $order) {
+        </thead>
+        <tbody>
+          <?php
+          if (count($orders) == 0) {
             echo '
-          <tr>
-            <th scope="row">' . $count . '</th>
-            <td>' . $order[1] . '</td>
-            <td>' . $order[2] . '</td>
-            <td>' . $order[3] . '</td>
-            <td>' . $order[4] . '</td>
-            <td>₱' . $order[5] . '.00</td>
-            <td>
-              <form action="../php/cancelOrder.php" method="post">
-                <input name="orderId" value="' . $order[0] . '" hidden />
-                <button type="submit" class="btn btn-danger px-3 fw-bold">Cancel</button>
-              </form>
-            </td>
-          </tr>
-          ';
-            $count++;
+            <tr>
+              <td colspan="7" class="text-center fw-bold py-5 fs-3">No Orders</td>
+            </tr>
+            ';
+          } else {
+            $count = 1;
+            foreach ($orders as $order) {
+              echo '
+            <tr>
+              <th scope="row">' . $count . '</th>
+              <td>' . $order[1] . '</td>
+              <td>' . $order[2] . '</td>
+              <td>' . $order[3] . '</td>
+              <td>' . $order[4] . '</td>
+              <td>₱' . $order[5] . '.00</td>
+              <td>
+                <form action="../php/cancelOrder.php" method="post">
+                  <input name="orderId" value="' . $order[0] . '" hidden />
+                  <button type="submit" class="btn btn-danger px-3 fw-bold">Cancel</button>
+                </form>
+              </td>
+            </tr>
+            ';
+              $count++;
+            }
           }
-        }
-
-        ?>
-      </tbody>
-    </table>
+          ?>
+        </tbody>
+      </table>
+    </div>
   </main>
 </body>
 
