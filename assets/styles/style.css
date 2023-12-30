@@ -55,16 +55,19 @@
   }
 }
 
-#orderDialog::backdrop {
+#orderDialog::backdrop,
+#reservationDialog::backdrop {
   background-color: black;
   opacity: 75%;
 }
 
-#orderDialog::-webkit-scrollbar {
+#orderDialog::-webkit-scrollbar,
+#reservationDialog::-webkit-scrollbar {
   display: none;
 }
 
-#orderDialog {
+#orderDialog,
+#reservationDialog {
   -ms-overflow-style: none;
   scrollbar-width: none;
   width: 80vw;
