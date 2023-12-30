@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,8 +30,21 @@
           <h1 class="text-red-600 font-secondary fw-bold hero-title">KoreYum Grill and Restaurant</h1>
           <p class="fs-5 mb-4">Unlimited eat all you can!</p>
           <div class="d-flex align-items-md-center gap-3 flex-column flex-md-row">
-            <button class="btn bg-red-600 text-white fw-bold px-4 py-2" style="--bs-btn-hover-bg: #991b1b;">Order Now</button>
-            <button class="btn btn-outline-secondary fw-bold px-4 py-2 text-black" style="--bs-btn-hover-bg: rgba(0, 0, 0, 15%);">Reserve a Table</button>
+            <a class="btn bg-red-600 text-white fw-bold px-4 py-2" style="--bs-btn-hover-bg: #991b1b;" href="
+            <?php 
+            if (isset($_SESSION["id"])) { echo "./pages/menu.php"; }
+            else { echo "./pages/login.php"; }
+            ?>">
+              Order Now
+            </a>
+
+            <a class="btn btn-outline-secondary fw-bold px-4 py-2 text-black" style="--bs-btn-hover-bg: rgba(0, 0, 0, 15%);" href="
+            <?php 
+            if (isset($_SESSION["id"])) { echo "./pages/menu.php#reservations"; }
+            else { echo "./pages/login.php"; }
+            ?>">
+              Reserve a Table
+            </a>
           </div>
         </div>
         <div class="col max-h-75">
