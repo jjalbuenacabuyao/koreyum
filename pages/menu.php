@@ -53,6 +53,9 @@ if (!isset($_SESSION["id"])) {
               <li class="nav-item">
                 <a class="nav-link text-dark" href="./orders.php">My Orders</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="./reservations.php">My Reservations</a>
+              </li>
               ';
 
             if ($_SESSION['id'] === "1") {
