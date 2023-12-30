@@ -90,7 +90,7 @@ if (!isset($userId)) {
     }
     ?>
 
-    <div class="table-responsive-sm">
+    <div class="table-responsive-sm" style="border: 1px solid rgba(0, 0, 0, 50%); border-radius: 1rem; overflow: hidden;">
       <table class="table-hover table-borderless table">
         <thead>
           <tr>
@@ -117,10 +117,10 @@ if (!isset($userId)) {
             <tr>
               <th scope="row">' . $count . '</th>
               <td>' . $order[1] . '</td>
-              <td>' . $order[2] . '</td>
-              <td>' . $order[3] . '</td>
-              <td>' . $order[4] . '</td>
-              <td>₱' . $order[5] . '.00</td>
+              <td>' . trim($order[2], ", ") . '</td>
+              <td>' . trim($order[3], ", ") . '</td>
+              <td>' . trim($order[4], ", ") . '</td>
+              <td>₱' . number_format($order[5], 0, ".", ",") . '.00</td>
               <td>
                 <form action="../php/cancelOrder.php" method="post">
                   <input name="orderId" value="' . $order[0] . '" hidden />
