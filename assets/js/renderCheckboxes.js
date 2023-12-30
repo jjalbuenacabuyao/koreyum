@@ -6,11 +6,19 @@ const sides = ["Korean Braised Tofu", "Korean Kimchi", "Lettuce", "Cucumber", "C
 
 const drinks = ["Coca-Cola", "Juice", "Sprite", "Royal", "Soju"];
 
-const addOnsContainer = document.querySelector("[data-addonsContainer]");
-const sidesContainer = document.querySelector("[data-sidesContainer]");
-const drinksContainer = document.querySelector("[data-drinksContainer]");
+const addOnsContainers = document.querySelectorAll("[data-addonsContainer]");
+const sidesContainers = document.querySelectorAll("[data-sidesContainer]");
+const drinksContainers = document.querySelectorAll("[data-drinksContainer]");
 
-createCheckboxes(addOnsContainer, "addons[]", addOns);
-createCheckboxes(sidesContainer, "sides[]", sides);
-createCheckboxes(drinksContainer, "drinks[]", drinks);
+addOnsContainers.forEach(addOnsContainer => {
+  createCheckboxes(addOnsContainer, "addons[]", addOns);
+});
+
+sidesContainers.forEach(sidesContainer => {
+  createCheckboxes(sidesContainer, "sides[]", sides);
+});
+
+drinksContainers.forEach(drinksContainer => {
+  createCheckboxes(drinksContainer, "drinks[]", drinks);
+});
 
