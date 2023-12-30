@@ -93,7 +93,7 @@ if (!isset($userId)) {
     }
     ?>
 
-    <div class="table-responsive-sm" style="border: 1px solid rgba(0, 0, 0, 50%); border-radius: 1rem; overflow: hidden;">
+    <div class="table-responsive-sm">
       <table class="table-hover table-borderless table">
         <thead>
           <tr>
