@@ -21,9 +21,13 @@ openOrderDialogButton.forEach(button => {
 })
 
 openReservationDialogButton.forEach(button => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (event) => {
     reservationDialog.showModal();
     body.style.overflowY = "hidden";
+
+    const targetReservation = event.currentTarget.getAttribute("data-target");
+    const radioInputElement = document.querySelector(`input[value="${targetReservation}"]`);
+    radioInputElement.setAttribute("checked", "true");
   })
 })
 
