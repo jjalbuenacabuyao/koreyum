@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <header class="container">
   <nav class="navbar navbar-expand-lg bg-white nav">
     <div class="container-fluid p-0">
