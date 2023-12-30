@@ -49,39 +49,23 @@ if (!isset($_SESSION["id"])) {
             </li>
 
             <?php
-            if (!isset($_SESSION['id'])) {
-              echo '
-            <li class="nav-item" style="padding-right: 0.5rem;">
-              <a class="btn bg-red-600 text-white fw-bold rounded-pill px-3" style="--bs-btn-hover-bg: #991b1b;" href="./login.php">
-                Log in
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="btn btn-outline-dark rounded-pill px-3" href="./register.php">
-                Register
-              </a>
-            </li>
-            ';
-            } else {
-              echo '
+            echo '
               <li class="nav-item">
                 <a class="nav-link text-dark" href="./orders.php">My Orders</a>
               </li>
               ';
 
-              if ($_SESSION['id'] === "1") {
-                echo '
+            if ($_SESSION['id'] === "1") {
+              echo '
               <li class="nav-item" style="padding-right: 0.5rem;">
                 <a class="nav-link text-dark" href="./ViewInvoice.php">View Daily Sales</a>
               </li>';
-              }
+            }
 
-              echo '
+            echo '
               <li class="nav-item">
                 <a href="../php/logout.php" class="btn btn-danger rounded-pill px-3 fw-bold">Log out</a>
               </li>';
-            }
             ?>
           </ul>
         </div>
