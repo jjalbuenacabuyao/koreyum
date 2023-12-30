@@ -100,7 +100,7 @@ if (!isset($_SESSION["id"])) {
         </div>
       </div>
 
-      <div class="row">
+      <div class="row" id="reservations">
         <h3 class="fw-bold menu-subtitle">Reservations</h3>
         <div class="d-flex flex-column gap-4 addons-container" style="grid-template-columns: repeat(3, 1fr)!important;">
           <?php
