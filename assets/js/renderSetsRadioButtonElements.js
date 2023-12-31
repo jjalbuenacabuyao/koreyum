@@ -1,4 +1,4 @@
-const container = document.querySelector("[data-setContainer]");
+const container = document.querySelector("[data-setContainerOrder]");
 
 const sets = ["KoreYum Set 1 (2 to 3 persons)", "KoreYum Set 2 (4 to 5 persons)"]
 
