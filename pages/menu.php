@@ -204,13 +204,13 @@ if (!isset($_SESSION["id"])) {
   </dialog>
 
   <dialog id="reservationDialog">
-  <header class="d-flex justify-content-between align-items-center mb-4">
+    <header class="d-flex justify-content-between align-items-center mb-4">
       <h1 class="fs-4 mb-0">Select your Reservation</h1>
       <button data-trigger="closeReservation" style="all: unset;">
         <i class="bi bi-x-circle fs-3"></i>
       </button>
     </header>
-    <form action="../php/setOrders.php" class="d-flex flex-column gap-4" method="post">
+    <form action="../php/setReservations.php" class="d-flex flex-column gap-4" method="post">
       <div>
         <h2 class="text-red-600 fw-bold">KoreYum Reservations</h2>
         <div data-reservationsContainer></div>
@@ -229,6 +229,11 @@ if (!isset($_SESSION["id"])) {
       <div>
         <h2 class="text-red-600 fw-bold">Drinks</h2>
         <div data-drinksContainer></div>
+      </div>
+
+      <div>
+        <h2 class="text-red-600 fw-bold">Date and Time</h2>
+        <input id="dateAndTime" type="datetime-local" name="dateAndTime" />
       </div>
 
       <div class="d-flex justify-content-end gap-3 mt-2">
