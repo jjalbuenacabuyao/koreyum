@@ -178,22 +178,22 @@ if (!isset($_SESSION["id"])) {
     <form action="../php/setOrders.php" class="d-flex flex-column gap-4" method="post">
       <div>
         <h2 class="text-red-600 fw-bold">KoreYum Sets</h2>
-        <div data-setContainer></div>
+        <div data-setContainerOrder></div>
       </div>
 
       <div>
         <h2 class="text-red-600 fw-bold">Add-ons</h2>
-        <div data-addonsContainer></div>
+        <div data-addonsContainerOrder></div>
       </div>
 
       <div>
         <h2 class="text-red-600 fw-bold">Sides</h2>
-        <div data-sidesContainer></div>
+        <div data-sidesContainerOrder></div>
       </div>
 
       <div>
         <h2 class="text-red-600 fw-bold">Drinks</h2>
-        <div data-drinksContainer></div>
+        <div data-drinksContainerOrder></div>
       </div>
 
       <div class="d-flex justify-content-end gap-3 mt-2">
@@ -218,17 +218,17 @@ if (!isset($_SESSION["id"])) {
 
       <div>
         <h2 class="text-red-600 fw-bold">Add-ons</h2>
-        <div data-addonsContainer></div>
+        <div data-addonsContainerReservation></div>
       </div>
 
       <div>
         <h2 class="text-red-600 fw-bold">Sides</h2>
-        <div data-sidesContainer></div>
+        <div data-sidesContainerReservation></div>
       </div>
 
       <div>
         <h2 class="text-red-600 fw-bold">Drinks</h2>
-        <div data-drinksContainer></div>
+        <div data-drinksContainerReservation></div>
       </div>
 
       <div>
