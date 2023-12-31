@@ -6,19 +6,35 @@ const sides = ["Korean Braised Tofu", "Korean Kimchi", "Lettuce", "Cucumber", "C
 
 const drinks = ["Coca-Cola", "Juice", "Sprite", "Royal", "Soju"];
 
-const addOnsContainers = document.querySelectorAll("[data-addonsContainer]");
-const sidesContainers = document.querySelectorAll("[data-sidesContainer]");
-const drinksContainers = document.querySelectorAll("[data-drinksContainer]");
+const addOnsContainersOrder = document.querySelectorAll("[data-addonsContainerOrder]");
+const sidesContainersOrder = document.querySelectorAll("[data-sidesContainerOrder]");
+const drinksContainersOrder = document.querySelectorAll("[data-drinksContainerOrder]");
 
-addOnsContainers.forEach(addOnsContainer => {
-  createCheckboxes(addOnsContainer, "addons[]", addOns);
+const addOnsContainersReservation = document.querySelectorAll("[data-addonsContainerReservation]");
+const sidesContainersReservation = document.querySelectorAll("[data-sidesContainerReservation]");
+const drinksContainersReservation = document.querySelectorAll("[data-drinksContainerReservation]");
+
+addOnsContainersOrder.forEach(addOnsContainer => {
+  createCheckboxes("order", addOnsContainer, "addons[]", addOns);
 });
 
-sidesContainers.forEach(sidesContainer => {
-  createCheckboxes(sidesContainer, "sides[]", sides);
+addOnsContainersReservation.forEach(addOnsContainer => {
+  createCheckboxes("reservation", addOnsContainer, "addons[]", addOns);
 });
 
-drinksContainers.forEach(drinksContainer => {
-  createCheckboxes(drinksContainer, "drinks[]", drinks);
+sidesContainersOrder.forEach(sidesContainer => {
+  createCheckboxes("order", sidesContainer, "sides[]", sides);
+});
+
+sidesContainersReservation.forEach(sidesContainer => {
+  createCheckboxes("reservation", sidesContainer, "sides[]", sides);
+});
+
+drinksContainersOrder.forEach(drinksContainer => {
+  createCheckboxes("order", drinksContainer, "drinks[]", drinks);
+});
+
+drinksContainersReservation.forEach(drinksContainer => {
+  createCheckboxes("reservation", drinksContainer, "drinks[]", drinks);
 });
 
