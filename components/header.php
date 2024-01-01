@@ -49,7 +49,7 @@
             if ($_SESSION['id'] === "1") {
               echo '
               <li class="nav-item" style="padding-right: 0.5rem;">
-                <a class="nav-link text-dark" href="./pages/ViewInvoice.php">Daily Sales</a>
+                <a class="nav-link text-dark" href="./pages/dashboard.php">Dashboard</a>
               </li>';
             }
 

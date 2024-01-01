@@ -62,7 +62,7 @@ if (!isset($userId)) {
             if ($_SESSION['id'] === "1") {
               echo '
               <li class="nav-item" style="padding-right: 0.5rem;">
-                <a class="nav-link text-dark" href="./ViewInvoice.php">View Daily Sales</a>
+                <a class="nav-link text-dark" href="#">Dashboard</a>
               </li>';
             }
 

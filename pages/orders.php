@@ -29,7 +29,7 @@ if (!isset($userId)) {
   <header class="container">
     <nav class="navbar navbar-expand-lg bg-white nav">
       <div class="container-fluid p-0">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../index.php">
           <img src="../assets/images/logo.png" width="128" height="auto" alt="KoreYum" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@ if (!isset($userId)) {
             if ($_SESSION['id'] === "1") {
               echo '
               <li class="nav-item" style="padding-right: 0.5rem;">
-                <a class="nav-link text-dark" href="./ViewInvoice.php">View Daily Sales</a>
+                <a class="nav-link text-dark" href="./dashboard.php">Dashboard</a>
               </li>';
             }
 
