@@ -160,22 +160,22 @@ session_start();
     <form action="./php/setOrders.php" class="d-flex flex-column gap-4" method="post">
       <div>
         <h2 class="text-red-600 fw-bold">KoreYum Sets</h2>
-        <div data-setContainer></div>
+        <div data-setContainerOrder></div>
       </div>
 
       <div>
         <h2 class="text-red-600 fw-bold">Add-ons</h2>
-        <div data-addonsContainer></div>
+        <div data-addonsContainerOrder></div>
       </div>
 
       <div>
         <h2 class="text-red-600 fw-bold">Sides</h2>
-        <div data-sidesContainer></div>
+        <div data-sidesContainerOrder></div>
       </div>
 
       <div>
         <h2 class="text-red-600 fw-bold">Drinks</h2>
-        <div data-drinksContainer></div>
+        <div data-drinksContainerOrder></div>
       </div>
 
       <div class="d-flex justify-content-end gap-3 mt-2">
@@ -186,13 +186,49 @@ session_start();
   </dialog>
 
   <dialog id="reservationDialog">
-    Reservation Dialog
-    <button data-trigger="closeReservation">Close</button>
+    <header class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="fs-4 mb-0">Select your Reservation</h1>
+      <button data-trigger="closeReservation" style="all: unset;">
+        <i class="bi bi-x-circle fs-3"></i>
+      </button>
+    </header>
+    <form action="./php/setReservations.php" class="d-flex flex-column gap-4" method="post">
+      <div>
+        <h2 class="text-red-600 fw-bold">KoreYum Reservations</h2>
+        <div data-reservationsContainer></div>
+      </div>
+
+      <div>
+        <h2 class="text-red-600 fw-bold">Add-ons</h2>
+        <div data-addonsContainerReservation></div>
+      </div>
+
+      <div>
+        <h2 class="text-red-600 fw-bold">Sides</h2>
+        <div data-sidesContainerReservation></div>
+      </div>
+
+      <div>
+        <h2 class="text-red-600 fw-bold">Drinks</h2>
+        <div data-drinksContainerReservation></div>
+      </div>
+
+      <div>
+        <h2 class="text-red-600 fw-bold">Date and Time</h2>
+        <input id="dateAndTime" type="datetime-local" min="<?php echo date("o-m-d\TH:i", null); ?>" name="dateAndTime" required />
+      </div>
+
+      <div class="d-flex justify-content-end gap-3 mt-2">
+        <button type="button" data-trigger="closeReservation" class="btn btn-outline-secondary">Cancel</button>
+        <button type="submit" class="btn bg-red-600 text-white fw-bold px-3">Submit</button>
+      </div>
+    </form>
   </dialog>
 </body>
 
 <script src="./assets/js/toggleDialog.js" type="module"></script>
 <script src="./assets/js/renderSetsRadioButtonElements.js"></script>
 <script src="./assets/js/renderCheckboxes.js" type="module"></script>
+<script type="module" src="./assets/js/renderReservationsRadioButtonElements.js"></script>
 
 </html>
