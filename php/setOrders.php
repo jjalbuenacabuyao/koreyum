@@ -71,6 +71,6 @@ $sql = "INSERT INTO customerorder (koreyumSet, addons, sides, drinks, price, use
 
 $result = mysqli_query($conn, $sql);
 
-header("Location: ../pages/menu.php");
+header("Location: ../pages/orders.php");
 
 $conn -> close();
