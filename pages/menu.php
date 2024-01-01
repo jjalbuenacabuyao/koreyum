@@ -233,7 +233,7 @@ if (!isset($_SESSION["id"])) {
 
       <div>
         <h2 class="text-red-600 fw-bold">Date and Time</h2>
-        <input id="dateAndTime" type="datetime-local" min="<?php echo date("o-m-d\TH:i", null); ?>" name="dateAndTime" />
+        <input id="dateAndTime" type="datetime-local" min="<?php echo date("o-m-d\TH:i", null); ?>" name="dateAndTime" required />
       </div>
 
       <div class="d-flex justify-content-end gap-3 mt-2">
