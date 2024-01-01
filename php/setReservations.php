@@ -83,6 +83,6 @@ $sql = "INSERT INTO reservation (dish, addons, sides, drinks, price, date, userI
 
 $result = mysqli_query($conn, $sql);
 
-header("Location: ../pages/menu.php");
+header("Location: ../pages/reservations.php");
 
 $conn -> close();
