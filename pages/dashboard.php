@@ -23,6 +23,36 @@ if (!isset($userId)) {
   <link rel="stylesheet" href="../assets/styles/style.css">
   <script src="../assets/js/bootstrap.min.js" defer></script>
   <title>KoreYum | Dashboard</title>
+  <style>
+    .ct {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wrapper {
+      padding: 1rem;
+      border: 1px solid rgba(0, 0, 0, 50%);
+      border-radius: 1.5rem;
+      overflow-x: scroll;
+    }
+
+    @media screen and (min-width:1024px) {
+      .ct {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      .wrapper1 {
+        grid-column: 2/4;
+      }
+
+      .wrapper2 {
+        grid-column: 2/4;
+        grid-row: 2;
+      }
+    }
+  </style>
 </head>
 
 <body class="font-primary mb-5">
@@ -78,7 +108,7 @@ if (!isset($userId)) {
   </header>
 
   <main class="container mt-5">
-    <div class="wrapper d-flex flex-column gap-5">
+    <div class="ct gap-5 gap-lg-3">
       <!-- Orders -->
       <?php
       include "../php/db.php";
@@ -93,7 +123,7 @@ if (!isset($userId)) {
         array_push($orders, array($row["id"], $row["koreyumSet"], $row["addons"], $row["sides"], $row["drinks"], $row["price"]));
       }
       ?>
-      <div style="padding: 1rem;border: 1px solid rgba(0, 0, 0, 50%);border-radius:1.5rem;">
+      <div class="wrapper wrapper1">
         <p class="fs-4 fw-bold">Orders</p>
         <div class="table-responsive-sm">
           <table class="table-hover table-borderless table">
@@ -166,7 +196,7 @@ if (!isset($userId)) {
       }
       ?>
 
-      <div style="padding: 1rem;border: 1px solid rgba(0, 0, 0, 50%);border-radius:1.5rem;">
+      <div class="wrapper wrapper2">
         <p class="fs-4 fw-bold">Reservations</p>
         <div class="table-responsive-sm">
           <table class="table-hover table-borderless table">
@@ -226,6 +256,36 @@ if (!isset($userId)) {
       </div>
 
       <!-- Sales Report -->
+      <div class="text-white d-flex flex-column gap-3" style="grid-column: 1;grid-row:1/3;overflow:hidden;">
+        <div class="bg-danger p-3" style="border-radius: 1rem;">
+          <h1>Sales</h1>
+          <p class="fs-2 fw-bold">
+            <?php
+            $sql = "SELECT * FROM sales";
+            $result = mysqli_query($conn, $sql);
+
+            $currentTotalPrice = 0;
+            while ($row = $result->fetch_assoc()) {
+              $currentTotalPrice = (int) $row["totalSales"];
+            }
+
+            echo '₱' . number_format($currentTotalPrice, 0, ".", ",") . '.00';
+            ?>
+          </p>
+        </div>
+
+        <div class="bg-danger p-3" style="border-radius: 1rem;">
+          <h1 class="fs-3">Total Users</h1>
+          <p class="fs-2 fw-bold">
+            <?php
+            $sql = "SELECT COUNT(id) FROM user";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+            echo $row["COUNT(id)"];
+            ?>
+          </p>
+        </div>
+      </div>
     </div>
   </main>
 </body>
