@@ -43,7 +43,7 @@ session_start();
             if (isset($_SESSION["id"])) { echo "./pages/menu.php#reservations"; }
             else { echo "./pages/login.php"; }
             ?>">
-              Reserve a Table
+              Reserve
             </a>
           </div>
         </div>
