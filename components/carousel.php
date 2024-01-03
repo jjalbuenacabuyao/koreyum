@@ -9,5 +9,11 @@
   <div class="carousel-item w-100" data-bs-interval="3000">
     <img src="./assets/images/unli-pork-samgyup.jpg" class="d-block w-100 object-cover carousel-img" alt="...">
   </div>
+  <div class="carousel-item w-100" data-bs-interval="3000">
+    <img src="./assets/images/for-hero1.jpg" class="d-block w-100 object-cover carousel-img" alt="...">
+  </div>
+  <div class="carousel-item w-100" data-bs-interval="3000">
+    <img src="./assets/images/for-hero2.jpg" class="d-block w-100 object-cover carousel-img" alt="...">
+  </div>
 </div>
 </div>
