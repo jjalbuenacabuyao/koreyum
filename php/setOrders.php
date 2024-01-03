@@ -12,7 +12,7 @@ $totalPrice = 0;
 if ($set === "KoreYum Set 1 (2 to 3 persons)") {
   $totalPrice += 499;
 } else {
-  $totalPrice += 999;
+  $totalPrice += 1099;
 }
 
 $selectedAddons = "";

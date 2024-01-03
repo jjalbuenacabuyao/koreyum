@@ -94,7 +94,7 @@ if (!isset($_SESSION["id"])) {
               renderCard($setImg, $set, 499, "set");
               continue;
             }
-            renderCard($setImg, $set, 999, "set");
+            renderCard($setImg, $set, 1099, "set");
           }
           ?>
         </div>
