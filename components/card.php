@@ -1,7 +1,7 @@
 <?php
 function renderCard($imageSrc, $title, $price, $type)
 {
-  $url = "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+  $url = "https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 
   $buttonText = "Order";
 
@@ -12,7 +12,7 @@ function renderCard($imageSrc, $title, $price, $type)
   if ($type === "set") {
     $btn = "";
 
-    if ($url === "http://localhost/koreyum/homepage.php" && (!isset($_SESSION["id"]))) {
+    if ($url === "https://koreyumgrill.000webhostapp.com" && (!isset($_SESSION["id"]))) {
       $btn = '<a href="./pages/login.php" class="btn btn-danger">' . $buttonText . '</a>';
     } else {
       $btn = '<button data-trigger="order" data-target="'.$title.'" class="btn btn-danger">' . $buttonText . '</button>';
@@ -35,7 +35,7 @@ function renderCard($imageSrc, $title, $price, $type)
 
     $btn = "";
 
-    if ($url === "http://localhost/koreyum/homepage.php" && (!isset($_SESSION["id"]))) {
+    if ($url === "https://koreyumgrill.000webhostapp.com" && (!isset($_SESSION["id"]))) {
       $btn = '<a href="./pages/login.php" class="btn btn-danger">' . $buttonText . '</a>';
     } else {
       $btn = '<button data-trigger="reserve" data-target="'.$title.'" class="btn btn-danger">' . $buttonText . '</button>';
