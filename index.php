@@ -80,7 +80,7 @@ session_start();
         <h3 class="fw-bold menu-subtitle">Reservations</h3>
         <div class="d-flex flex-column gap-4 addons-container" style="grid-template-columns: repeat(3, 1fr)!important;">
           <?php
-          $menus = array("Unli-Pork Samgyup" => "./assets/images/unli-pork-samgyup.jpg", "Unli-Beef Samgyup" => "./assets/images/unli-beef-samgyup.jpg", "Unli-Pork and Beef Samgyup" => "./assets/images/unli-pork-and-beef-samgyup.jpg", "Unli Shabu-Shabu" => "./assets/images/unli-shabu-shabu.jpg", "KoreYum Ultimate" => "./assets/images/koreyum-ultimate.jpg");
+          $menus = array("Unli-Pork Samgyup" => "../assets/images/pork.jpg", "Unli-Beef Samgyup" => "../assets/images/unli-beef-samgyup.jpg", "Unli-Pork and Beef Samgyup" => "../assets/images/pork-and-beef.jpg", "Unli Shabu-Shabu" => "../assets/images/unli-shabu-shabu.jpg", "KoreYum Ultimate" => "../assets/images/koreyum-ultimate.jpg");
 
           foreach ($menus as $menu => $img) {
             renderCard($img, $menu, 249, "reservation");
@@ -131,7 +131,7 @@ session_start();
           <?php
           $drinks = array("Coca-Cola" => 40, "Juice" => 40, "Sprite" => 40, "Royal" => 40, "Soju" => 120);
 
-          $drinksImages = array("./assets/images/coke.webp", "./assets/images/juice.jpg", "./assets/images/sprite.webp", "./assets/images/royal.webp", "./assets/images/soju.webp");
+          $drinksImages = array("../assets/images/coke.webp", "../assets/images/juice.jpg", "../assets/images/sprite.webp", "../assets/images/royal.webp", "../assets/images/soju.jpg");
 
           $index = 0;
           foreach ($drinks as $side => $price) {
