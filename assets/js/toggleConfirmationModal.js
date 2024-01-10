@@ -49,6 +49,15 @@ function displaySelectedDishes(modal, set) {
   } else {
     selectedDrinks.forEach(item => item.innerHTML = "");
   }
+
+  if (set === "reservation") {
+    const dateAndTimeInputElement = document.getElementById("dateAndTime");
+    const selectedDate = document.querySelector("[data-selectedDate]");
+
+    if (dateAndTimeInputElement) {
+      selectedDate.innerHTML = dateAndTimeInputElement.value;
+    }
+  }
 }
 
 orderConfirmationButton.addEventListener("click", () => displaySelectedDishes(orderConfirmationDialog, "set"))
