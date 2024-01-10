@@ -321,6 +321,11 @@ session_start();
           <h2 class="fs-5 mb-0 fw-bold">Drinks</h2>
           <p data-selectedDrinks></p>
         </div>
+        
+        <div>
+          <h2 class="fs-5 mb-0 fw-bold">Date and Time</h2>
+          <p data-selectedDate></p>
+        </div>
 
         <div class="d-flex justify-content-end gap-3 mt-2">
           <button type="button" data-closeReservationConfirmation class="btn btn-outline-secondary">Cancel</button>
