@@ -12,10 +12,10 @@ const selectedAddOns = document.querySelector("[data-selectedAddOns]");
 const selectedSides = document.querySelector("[data-selectedSides]");
 const selectedDrinks = document.querySelector("[data-selectedDrinks]");
 
-orderConfirmationButton.addEventListener("click", () => {
-  orderConfirmationDialog.showModal();
+function displaySelectedDishes(modal, name) {
+  modal.showModal();
 
-  const setRadioButtons = document.querySelector('input[name="set"]:checked');
+  const setRadioButtons = document.querySelector(`input[name="${name}"]:checked`);
 
   if (setRadioButtons) { selectedSet.innerHTML = setRadioButtons.value; }
 
@@ -42,7 +42,9 @@ orderConfirmationButton.addEventListener("click", () => {
   } else {
     selectedDrinks.innerHTML = "";
   }
-})
+}
+
+orderConfirmationButton.addEventListener("click", () => displaySelectedDishes(orderConfirmationDialog, "set"))
 
 closeOrderConfirmationButton.forEach(button => {
   button.addEventListener("click", () => {
