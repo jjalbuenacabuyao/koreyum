@@ -18,10 +18,41 @@ session_start();
   <link rel="stylesheet" href="./assets/styles/utility.css">
   <script src="./assets/js/bootstrap.min.js" defer></script>
   <title>KoreYum</title>
+  <style>
+    #carousel {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      opacity: 20%;
+      height: 100vh;
+    }
+  </style>
 </head>
 
-<body class="font-primary" data-body>
+<body class="font-primary" data-body style="position: relative;">
   <?php include "./components/header.php" ?>
+
+  <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner rounded">
+      <div class="carousel-item active w-100" data-bs-interval="3000">
+        <img src="./assets/images/bg.png" class="d-block w-100 object-cover" style="height: 100vh;" alt="...">
+      </div>
+      <div class="carousel-item w-100" data-bs-interval="3000">
+        <img src="./assets/images/banner.png" class="d-block w-100 object-cover" style="height: 100vh;" alt="...">
+      </div>
+      <div class="carousel-item w-100" data-bs-interval="3000">
+        <img src="./assets/images/unli-pork-samgyup.jpg" class="d-block w-100 object-cover" style="height: 100vh;" alt="...">
+      </div>
+      <div class="carousel-item w-100" data-bs-interval="3000">
+        <img src="./assets/images/for-hero1.jpg" class="d-block w-100 object-cover" style="height: 100vh;" alt="...">
+      </div>
+      <div class="carousel-item w-100" data-bs-interval="3000">
+        <img src="./assets/images/for-hero2.jpg" class="d-block w-100 object-cover" style="height: 100vh;" alt="...">
+      </div>
+    </div>
+  </div>
 
   <main class="d-flex flex-column gap-5">
     <div class="container min-vh-100">
@@ -31,17 +62,23 @@ session_start();
           <p class="fs-5 mb-4">Unlimited eat all you can!</p>
           <div class="d-flex align-items-md-center gap-3 flex-column flex-md-row">
             <a class="btn bg-red-600 text-white fw-bold px-4 py-2" style="--bs-btn-hover-bg: #991b1b;" href="
-            <?php 
-            if (isset($_SESSION["id"])) { echo "./pages/menu.php"; }
-            else { echo "./pages/login.php"; }
+            <?php
+            if (isset($_SESSION["id"])) {
+              echo "./pages/menu.php";
+            } else {
+              echo "./pages/login.php";
+            }
             ?>">
               Order Now
             </a>
 
             <a class="btn btn-outline-secondary fw-bold px-4 py-2 text-black" style="--bs-btn-hover-bg: rgba(0, 0, 0, 15%);" href="
-            <?php 
-            if (isset($_SESSION["id"])) { echo "./pages/menu.php#reservations"; }
-            else { echo "./pages/login.php"; }
+            <?php
+            if (isset($_SESSION["id"])) {
+              echo "./pages/menu.php#reservations";
+            } else {
+              echo "./pages/login.php";
+            }
             ?>">
               Reserve
             </a>
