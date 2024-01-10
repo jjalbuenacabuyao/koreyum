@@ -55,10 +55,9 @@
   }
 }
 
-#orderDialog::backdrop,
-#reservationDialog::backdrop {
+dialog::backdrop {
   background-color: black;
-  opacity: 75%;
+  opacity: 60%;
 }
 
 #orderDialog::-webkit-scrollbar,
@@ -67,7 +66,8 @@
 }
 
 #orderDialog,
-#reservationDialog {
+#reservationDialog,
+#orderConfirmationDialog {
   -ms-overflow-style: none;
   scrollbar-width: none;
   width: 80vw;
