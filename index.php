@@ -217,8 +217,42 @@ session_start();
 
       <div class="d-flex justify-content-end gap-3 mt-2">
         <button type="button" data-trigger="closeOrder" class="btn btn-outline-secondary">Cancel</button>
-        <button type="submit" class="btn bg-red-600 text-white fw-bold px-3">Submit</button>
+        <button data-orderConfirmationButton type="button" class="btn bg-red-600 text-white fw-bold px-3">Submit</button>
       </div>
+
+      <dialog id="orderConfirmationDialog" data-orderConfirmationDialog>
+        <header class="d-flex justify-content-between align-items-center mb-4">
+          <h1 class="fs-4 mb-0">Confirm your order</h1>
+          <button type="button" data-closeOrderConfirmation style="all: unset;">
+            <i class="bi bi-x-circle fs-3"></i>
+          </button>
+        </header>
+
+        <div>
+          <h2 class="fs-5 mb-0 fw-bold">Set</h2>
+          <p data-selectedSet></p>
+        </div>
+
+        <div>
+          <h2 class="fs-5 mb-0 fw-bold">Add-Ons</h2>
+          <p data-selectedAddOns></p>
+        </div>
+
+        <div>
+          <h2 class="fs-5 mb-0 fw-bold">Sides</h2>
+          <p data-selectedSides></p>
+        </div>
+
+        <div>
+          <h2 class="fs-5 mb-0 fw-bold">Drinks</h2>
+          <p data-selectedDrinks></p>
+        </div>
+
+        <div class="d-flex justify-content-end gap-3 mt-2">
+          <button type="button" data-closeOrderConfirmation class="btn btn-outline-secondary">Cancel</button>
+          <button type="submit" class="btn bg-red-600 text-white fw-bold px-3">Confirm</button>
+        </div>
+      </dialog>
     </form>
   </dialog>
 
@@ -267,5 +301,6 @@ session_start();
 <script src="./assets/js/renderSetsRadioButtonElements.js"></script>
 <script src="./assets/js/renderCheckboxes.js" type="module"></script>
 <script type="module" src="./assets/js/renderReservationsRadioButtonElements.js"></script>
+<script type="module" src="./assets/js/toggleConfirmationModal.js"></script>
 
 </html>
