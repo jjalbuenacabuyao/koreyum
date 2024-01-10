@@ -67,7 +67,8 @@ dialog::backdrop {
 
 #orderDialog,
 #reservationDialog,
-#orderConfirmationDialog {
+#orderConfirmationDialog,
+#reservationConfirmationDialog {
   -ms-overflow-style: none;
   scrollbar-width: none;
   width: 80vw;
