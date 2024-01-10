@@ -1,5 +1,5 @@
-<header class="container">
-  <nav class="navbar navbar-expand-lg bg-white nav">
+<header class="container" style="background-color: transparent;">
+  <nav class="navbar navbar-expand-lg bg-white nav" style="background-color: transparent!important;">
     <div class="container-fluid p-0">
       <a class="navbar-brand" href="#">
         <img src="./assets/images/logo.png" width="128" height="auto" alt="KoreYum" />
