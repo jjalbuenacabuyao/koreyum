@@ -11,7 +11,7 @@ reservations.map(reservation => {
   const radioElementAttributes = {
     "id": reservation,
     "type": "radio",
-    "name": "set",
+    "name": "reservation",
     "value": reservation,
   }
 
