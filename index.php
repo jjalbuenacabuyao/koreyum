@@ -296,7 +296,7 @@ session_start();
 
       <dialog id="reservationConfirmationDialog" data-reservationConfirmationDialog>
         <header class="d-flex justify-content-between align-items-center mb-4">
-          <h1 class="fs-4 mb-0">Confirm your order</h1>
+          <h1 class="fs-4 mb-0">Confirm your reservation</h1>
           <button type="button" data-closeReservationConfirmation style="all: unset;">
             <i class="bi bi-x-circle fs-3"></i>
           </button>
