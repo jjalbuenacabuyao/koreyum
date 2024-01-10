@@ -2,7 +2,7 @@
 include 'db.php';
 session_start();
 
-$set = $_POST["set"];
+$set = $_POST["reservation"];
 $addOns = $_POST["addons"];
 $sides = $_POST["sides"];
 $drinks = $_POST["drinks"];
